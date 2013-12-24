@@ -7,8 +7,8 @@ FILE_DIR="/PATH/TO/LOGSFOLDER"
 DEST_DIR="/PATH/WHERE/YOU/WANT/version.txt"
 # File extension of the logfile. Be sure to only have 1 logfile with that extension in the folder.
 SUFFIX="txt"
-cd $FILE_DIR
 version() {
+cd $FILE_DIR
 find -type f -name "*.$SUFFIX" | ls -Art | tail -n 1 | xargs grep 'version' | head -1 | cut -d "'" -f2 > $DEST_DIR
 }
 while true
