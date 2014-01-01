@@ -32,7 +32,7 @@ If you wish to fully stop the Starbound server, press **CTRL+C** twice within 5 
 
 To update your Starbound to the latest version available just execute **update.sh** and put in your Steam login information.
 
-If you just want to start the Starbound server just use **serverstart.sh** to start it without the complimentary scripts.
+If you just want to start the Starbound server just use **restart.sh** to start it without the complimentary scripts.
 
 
 How to display playercount etc?
@@ -45,4 +45,9 @@ Example:
 $online = file_get_contents('http://www.pathto.your/online.txt');  
 echo $online;
 ``` 
+
+Known problems
+--------------
+
+- Sometimes if server crashes because of a modded client, it doesnt restart automatically. Also it doesnt compress the log file in that case. **Workaround:** Set an automatic restart with a cron for **restart.sh**, and move/compress logs that didnt compress yourself.
 
